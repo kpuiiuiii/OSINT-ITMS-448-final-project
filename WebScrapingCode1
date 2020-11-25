@@ -1,0 +1,19 @@
+# Assuming you have pip installed already ->
+# Make sure you have both BeautifulSoup and Requests install:
+#pip install beautifulsoup4
+#pip install requests
+import requests
+from bs4 import BeautifulSoup
+# with the requests module we use the get function and put the website into a variable
+result = requests.get("https://www.whitehouse.gov/briefings-statements/")
+# we can put the result content into a variable called src
+src = result.content
+# We can put the src var into  Beautiful Soup
+soup = BeautifulSoup(src, 'lxml')
+# we wanna get a list of links - urls var
+urls = []
+for h2_tag in soup.find_all('h2'): # find all the h2 tags - Inspected element shows a href links are stored in h2 header tags
+        a_tag = h2_tag.find('a') # specify that we are searching for the a tags in the h2 header elements
+        urls.append(a_tag) # add it to the urls var to get a list of a href links 
+
+print(urls)
