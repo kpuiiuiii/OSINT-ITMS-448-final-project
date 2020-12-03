@@ -12,3 +12,9 @@
 4. Enter your user credentials when prompted as well as the item you would like to search
 5. Wait for the scraper to finish
 6. Observe a _Twitter_al-Qaeda.csv_ file in the same folder
+
+## Reddit al-Qaeda scraper
+1. Open Reddit Folder
+2. Run R code into RStudio
+3. find the exported csv files in doc and analyze
+
